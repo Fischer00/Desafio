@@ -1,0 +1,25 @@
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    background-color: #f8f9fa;
+    padding: 15px;
+}
+.content {
+    margin-left: 260px; 
+    padding: 15px;
+}
+.content-section {
+    display: none; 
+}
+.content-section.active {
+    display: block; 
+}
+
+.step.active {
+    display: block; 
+
+}
+
