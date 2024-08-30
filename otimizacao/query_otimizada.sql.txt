@@ -1,0 +1,36 @@
+SELECT
+    p.id,
+    p.nome,
+    p.foto,
+    COALESCE(d.valor_documento, 'Nenhum documento') AS documento,
+    COALESCE(c.valor_contato, 'Nenhum contato') AS contato,
+    COALESCE(e.valor_endereco, 'Nenhum endereço') AS endereco
+FROM
+    pessoa p
+LEFT JOIN (
+    SELECT
+        id_pessoa,
+        GROUP_CONCAT(CONCAT(tipo, ' - ', valor) ORDER BY tipo SEPARATOR ', ') AS valor_documento
+    FROM
+        documento
+    GROUP BY
+        id_pessoa
+) d ON d.id_pessoa = p.id
+LEFT JOIN (
+    SELECT
+        id_pessoa,
+        GROUP_CONCAT(CONCAT(tipo, ' - ', valor) ORDER BY tipo SEPARATOR ', ') AS valor_contato
+    FROM
+        contato
+    GROUP BY
+        id_pessoa
+) c ON c.id_pessoa = p.id
+LEFT JOIN (
+    SELECT
+        id_pessoa,
+        GROUP_CONCAT(CONCAT(tipo, ' - ', cep, ' - ', estado, ' - ', cidade, ' - ', bairro, ' - ', rua) ORDER BY tipo SEPARATOR ', ') AS valor_endereco
+    FROM
+        endereco
+    GROUP BY
+        id_pessoa
+) e ON e.id_pessoa = p.id;

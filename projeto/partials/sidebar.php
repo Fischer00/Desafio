@@ -1,12 +1,13 @@
-<div class="sidebar">
-    <h4>Menu</h4>
-    <ul class="nav flex-column">
+<!-- partials/sidebar.php -->
+<nav class="sidebar">
+    <link href="/projeto/partials/styles.css" rel="stylesheet">
+    <a class="sidebar-brand" href="/projeto/index.php"><i class="fas fa-home"></i> Home</a>
+    <ul class="sidebar-nav">
         <li class="nav-item">
-            <a class="nav-link active" href="#" data-page="home">Adicionar Registro</a>
+            <a class="nav-link" href="/projeto/views/search.php"><i class="fas fa-search"></i> Buscar</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" data-page="busca">Procura</a>
+            <a class="nav-link" href="/projeto/views/register.php"><i class="fas fa-user-plus"></i> Cadastrar</a>
         </li>
     </ul>
-</div>
-a
+</nav>

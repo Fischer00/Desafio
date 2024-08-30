@@ -1,25 +1,177 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e2a38; 
+    color: #e0e0e0; 
+}
+
 .sidebar {
-    height: 100vh;
-    position: fixed;
+    background-color: #2b3a4e; 
+    color: #e0e0e0; 
+    padding: 20px; /* Espaçamento interno da sidebar */
+    height: 100vh; /* Altura completa da tela */
+    position: fixed; 
     top: 0;
     left: 0;
-    width: 250px;
-    background-color: #f8f9fa;
-    padding: 15px;
-}
-.content {
-    margin-left: 260px; 
-    padding: 15px;
-}
-.content-section {
-    display: none; 
-}
-.content-section.active {
-    display: block; 
+    width: 250px; /* Largura da sidebar */
+    overflow-y: auto; /* Permite rolar se o conteúdo for maior que a altura */
+    border-radius: 0 8px 8px 0; /* Arredondar apenas os cantos à direita da sidebar */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3); /* Sombra para um efeito de profundidade */
 }
 
-.step.active {
-    display: block; 
-
+.sidebar-section {
+    border-bottom: 1px solid #1e2a38; /* Borda inferior das seções */
+    padding-bottom: 20px; /* Espaçamento inferior das seções */
+    margin-bottom: 20px; /* Espaçamento entre as seções */
 }
+
+.sidebar-section:last-child {
+    border-bottom: none; /* Remove a borda inferior da última seção */
+}
+
+.sidebar-brand {
+    font-size: 1.5em;
+    color: #ffffff; 
+    text-decoration: none; 
+    display: flex; /* Alinha ícone e texto na horizontal */
+    align-items: center; /* Alinha verticalmente o ícone e o texto */
+    margin-bottom: 20px; 
+}
+
+.sidebar-brand i {
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+    font-size: 1.5em; /* Tamanho do ícone */
+}
+
+.sidebar-nav {
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o padding da lista */
+}
+
+.sidebar-nav .nav-item {
+    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+}
+
+.sidebar-nav .nav-link {
+    color: #e0e0e0; 
+    text-decoration: none; 
+    display: flex; /* Flexbox para alinhar ícones e texto */
+    align-items: center; /* Alinha ícones e texto verticalmente */
+    padding: 10px; 
+    border-radius: 6px; /* Cantos arredondados para um visual mais suave */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para a cor de fundo e texto */
+}
+
+.sidebar-nav .nav-link i {
+    margin-right: 10px; 
+    font-size: 1.2em; 
+}
+
+.sidebar-nav .nav-link:hover {
+    color: #ffffff; /* Links da sidebar em branco ao passar o mouse */
+    background-color: #004d99; /* Fundo dos links ao passar o mouse */
+    text-decoration: none; /* Remove o sublinhado ao passar o mouse */
+}
+
+.main-content {
+    margin-left: 270px; /* Espaço para a sidebar */
+    padding: 20px; /* Espaçamento interno da área de conteúdo */
+    background-color: #1e2a38; /* Cor de fundo da área de conteúdo */
+    border-radius: 8px; /* Arredondar os cantos da área de conteúdo */
+}
+
+footer {
+    background-color: #002a5b; 
+    color: #e0e0e0;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 250px; 
+    width: calc(100% - 250px); 
+    border-radius: 8px 0 0 0; 
+}
+
+/* Estilos personalizados */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding-top: 70px;
+}
+
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-brand {
+    color: #ffffff;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.welcome-message {
+    font-size: 1.15em;
+    margin-bottom: 30px;
+    color: #555;
+    text-align: center;
+}
+
+.list-group-item {
+    border: none;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.img-thumbnail {
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.btn {
+    margin-right: 5px;
+}
+
+.alert {
+    text-align: center;
+}
+
+/* Estilo para melhorar a visualização em dispositivos móveis */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+    }
+
+    .img-thumbnail {
+        width: 70px;
+    }
+
+    .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
 

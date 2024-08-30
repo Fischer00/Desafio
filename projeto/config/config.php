@@ -8,19 +8,19 @@ if (!defined('TITLE')) {
     define('TITLE', 'a v1');
 }
 if (!defined('DB_HOST')) {
-    define('DB_HOST', 'localhost');
+    define('DB_HOST', 'DB_HOST');
 }
 if (!defined('DB_USER')) {
-    define('DB_USER', 'root');
+    define('DB_USER', 'DB_USER');
 }
 if (!defined('DB_PASS')) {
-    define('DB_PASS', '1234');
+    define('DB_PASS', 'DB_PASS');
 }
 if (!defined('DB_SCHEMA')) {
-    define('DB_SCHEMA', 'desafio');
+    define('DB_SCHEMA', 'DB_SCHEMA');
 }
 if (!defined('DB_PORT')) {
-    define('DB_PORT', '3306');
+    define('DB_PORT', 'DB_PORT');
 }
 
 

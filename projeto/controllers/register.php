@@ -8,6 +8,7 @@ ini_set('display_startup_errors', 1);
 include '../config/config.php';
 
 
+
 function sanitize_input($data) {
     return htmlspecialchars(strip_tags(trim($data)));
 }
@@ -96,6 +97,9 @@ try {
 
     
     $conn->commit();
+    header("Location: ../index.php");
+    exit();
+    
 
     echo "Dados adicionados com sucesso!";
 
@@ -103,6 +107,7 @@ try {
     
     $conn->rollback();
     echo "Erro: " . $e->getMessage();
+   
 }
 
 

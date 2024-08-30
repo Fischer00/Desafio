@@ -1,3 +1,4 @@
+
 <?php
 require_once '../config/config.php';
 
@@ -70,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Redirecionar após atualização
-    header('Location: search.php');
+    header('Location:/projeto/views/search.php');
     exit;
 }
 
@@ -95,16 +96,22 @@ $stmt_contatos->bind_param("i", $id_pessoa);
 $stmt_contatos->execute();
 $result_contatos = $stmt_contatos->get_result();
 $contatos = $result_contatos->fetch_all(MYSQLI_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+        
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Pessoa</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+    <div class="sidebar">
+        <?php include '../partials/sidebar.php'; ?>
+    </div>
 <body>
     <div class="container mt-4">
         <h1>Editar Pessoa</h1>
@@ -165,6 +172,7 @@ $contatos = $result_contatos->fetch_all(MYSQLI_ASSOC);
                 </div>
                 <hr>
             <?php endforeach; ?>
+            
 
             <h4>Contatos</h4>
             <?php foreach ($contatos as $index => $cont): ?>
@@ -181,8 +189,9 @@ $contatos = $result_contatos->fetch_all(MYSQLI_ASSOC);
             <?php endforeach; ?>
 
             <button type="submit" class="btn btn-primary">Salvar</button>
-            <a href="search.php" class="btn btn-secondary">Cancelar</a>
+            <a href="/projeto/views/search.php" class="btn btn-secondary">Cancelar</a>
         </form>
+        
     </div>
 </body>
 </html>
